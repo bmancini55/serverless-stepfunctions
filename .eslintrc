@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+    "no-undef": 2,
+    "no-unused-vars": 2,
+    "strict": 0,
+    "no-multi-spaces": 0,                     // allow funky spacing
+    "no-underscore-dangle": 0,                // breaks with _id
+    "no-use-before-define": [ 1, "nofunc" ],  // allow function expression reference
+    "no-loop-func": 0,                        // can use for of + array.map without issues
+    "quotes": [ 1, "single" ],
+    "camelcase": 0,                           // fails to allow stock_no type properties
+    "curly": 0,                               // prevents inline conditionals
+    "key-spacing": 0,                         // can't align keys
+    "new-cap": 0,                             // can't do OrderMapper(db)
+    "semi": [2, "always"]  ,                  // force semi-colons
+    "no-console": 0,                          // allow use of console
+    "no-unused-expressions": 0                // allow chai expect('').is.not.null;
+  }
+}

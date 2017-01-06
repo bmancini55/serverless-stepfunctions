@@ -1,0 +1,11 @@
+{
+  "name": "serverless-stepfunctions",
+  "description": "Step Function and serverless",
+  "version": "0.1.0",
+  "author": "Brian Mancini <bmancini@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2"
+  }
+}

@@ -1,0 +1,39 @@
+service: serverless-stepfunctions
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:PutItem"
+      Resource: "*"
+
+functions:
+  single:
+    handler: fns/single.handler
+
+  fetchFeed:
+    handler: fns/step-fetch-feed.handler
+
+  parseFeed:
+    handler: fns/step-parse-feed.handler
+
+  writeEntry:
+    handler: fns/step-write-entry.handler
+
+resources:
+  Resources:
+    PriceIndexTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: PriceIndex
+        AttributeDefinitions:
+          - AttributeName: date
+            AttributeType: N
+        KeySchema:
+          - AttributeName: date
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
