@@ -1,4 +1,4 @@
-service: serverless-stepfunctions
+service: stepfunction-fns
 
 provider:
   name: aws

@@ -1,0 +1,15 @@
+service: stepfunction-invoke
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  iamRoleStatements:
+    -
+      Effect: Allow
+      Action:
+        - states:StartExecution
+      Resource: "*"
+
+functions:
+  invoke:
+    handler: handler.invoke

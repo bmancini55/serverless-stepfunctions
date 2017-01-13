@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "name": "stepfunction-invoke",
+  "dependencies": {
+    "aws-sdk": "^2.7.21"
+  }
+}
